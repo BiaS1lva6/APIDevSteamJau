@@ -16,6 +16,9 @@ namespace APIDevSteamJau.Data
         public DbSet<JogoCategoria> JogosCategorias { get; set; }
         public DbSet<JogoMidia> JogosMidias { get; set; }
 
+        public DbSet<Carrinho> Carrinhos { get; set; }
+        public DbSet<ItemCarrinho> ItensCarrinhos { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -24,6 +27,9 @@ namespace APIDevSteamJau.Data
             builder.Entity<Categoria>().ToTable("Categorias");
             builder.Entity<JogoCategoria>().ToTable("JogosCategorias");
             builder.Entity<JogoMidia>().ToTable("JogosMidias");
+
+            builder.Entity<Carrinho>().ToTable("Carrinhos");
+            builder.Entity<ItemCarrinho>().ToTable("ItensCarrinhos");
 
         }
     }
